@@ -1,0 +1,43 @@
+@use "tailwindcss";
+@plugin "daisyui";
+
+input,
+textarea {
+    @apply max-sm:text-[18px];
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  33% {
+    transform: rotate(360deg);
+  }
+
+  35% {
+    transform: scale(2);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+
+  45%  {
+    transform: scale(2);
+  }
+
+  46% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation-name: rot;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
