@@ -18,9 +18,8 @@ Please rate them and give them advice, the goal is to determine their readiness
 for the final exam, and give them valuable advice based on their answers. Even
 if the advices are hard to hear, you must be fully honest.
 
-Answer by addressing directly to them, but keep it short and not too narrative.
-The goal is to be efficient and your output will only be used one time, you are
-not in the context of a conversation.
+Your output must not feel like someone is talking to them, you must provide it
+in a scientific way, meaning no extraneous words, no conversation, no empathy.
                 `,
             },
             {

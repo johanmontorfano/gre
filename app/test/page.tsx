@@ -3,6 +3,8 @@
 import { useSearchParams } from "next/navigation";
 import data from "@/public/data.json";
 import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
+import gfm from "remark-gfm";
 
 export default function Page() {
     const [cdown, setCdown] = useState(60 * 30);
@@ -103,7 +105,7 @@ export default function Page() {
                 <div className="flex flex-col gap-2 p-4">
                     {loading ? 
                         <div className="loading loading-spinner" /> :
-                        final.split("\n").map(t => <p className="text-justify">{t}</p>)}
+                        <Markdown remarkPlugins={[gfm]}>{final}</Markdown>}
                 </div>
                 <br />
                 <div className="w-full flex justify-end">
