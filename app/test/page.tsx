@@ -3,7 +3,6 @@
 import { useSearchParams } from "next/navigation";
 import data from "@/public/data.json";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function Page() {
     const [cdown, setCdown] = useState(60 * 30);
@@ -13,7 +12,6 @@ export default function Page() {
     const [answer, setAnswer] = useState("");
     const [final, setFinal] = useState("");
 
-    const router = useRouter();
     const params = useSearchParams();
     const item = data[parseInt(params.get("id")!) - 1];
 
@@ -38,16 +36,18 @@ export default function Page() {
     }
 
     useEffect(() => {
+        let cdownt = cdown;
         const interval = setInterval(() => {
-            setCdown(p => p - 1);
-            if (cdown <= 0) {
+            cdownt -= 1;
+            setCdown(cdownt);
+            if (cdownt < 0) {
+                handleSubmit();
                 clearInterval(interval);
-                router.back();
             }
         }, 1000);
 
         return () => clearInterval(interval);
-    });
+    }, []);
 
     return <div>
         <div className="stats bg-base-200">
@@ -60,12 +60,14 @@ export default function Page() {
                 <div className="stat-info">
                     <span className="countdown font-mono text-2xl">
                         <span style={{
-                            "--value": parseInt(cdown / 60 as unknown as string)
+                            "--value": parseInt(cdown / 60 as unknown as string),
+                            "--digits": 2
                         } as Record<string, number>}>
                             00
                         </span>:
                         <span style={{
-                            "--value": parseInt(cdown % 60 as unknown as string)
+                            "--value": parseInt(cdown % 60 as unknown as string),
+                            "--digits": 2
                         } as Record<string, number>}>
                             00
                         </span>
@@ -85,17 +87,19 @@ export default function Page() {
                 onChange={e => setAnswer(e.target.value)}
                 className="w-full h-[50vh] textarea"
                 placeholder="Write something down here..."
+                disabled={!cdown}
             />
             <div className="w-full flex justify-end">
                 <input
                     type="submit"
                     value="Submit"
                     className="btn btn-primary mt-4 w-[150px]"
+                    disabled={answer.length < 1 || !cdown}
                 />
             </div>
         </form>
         {show && <div className="absolute top-0 left-0 w-full h-dvh bg-black/50 flex justify-center items-center">
-            <div className="max-w-[600px] w-full bg-base-300">
+            <div className="max-w-[600px] w-full bg-base-300 p-4 rounded-md">
                 <div className="flex flex-col gap-2 p-4">
                     {loading ? 
                         <div className="loading loading-spinner" /> :
