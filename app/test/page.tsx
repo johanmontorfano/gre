@@ -15,7 +15,7 @@ export default function Page() {
 
     const router = useRouter();
     const params = useSearchParams();
-    const item = data[parseInt(params.get("id")!)];
+    const item = data[parseInt(params.get("id")!) - 1];
 
     async function handleSubmit() {
         setLoading(true);
