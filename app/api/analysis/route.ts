@@ -18,6 +18,8 @@ Please rate them and give them advice, the goal is to determine their readiness
 for the final exam, and give them valuable advice based on their answers. Even
 if the advices are hard to hear, you must be fully honest.
 
+You must rate the user over 6 before anything else.
+
 Your output must not feel like someone is talking to them, you must provide it
 in a scientific way, meaning no extraneous words, no conversation, no empathy.
                 `,
