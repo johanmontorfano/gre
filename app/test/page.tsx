@@ -100,8 +100,8 @@ export default function Page() {
                 />
             </div>
         </form>
-        {show && <div className="absolute top-0 left-0 w-full h-dvh bg-black/50 flex justify-center items-center">
-            <div className="max-w-[600px] w-full bg-base-300 p-4 rounded-md">
+        {show && <div className="fixed top-0 left-0 w-full h-dvh bg-black/50 flex justify-center items-center">
+            <div className="max-w-[600px] w-full bg-base-300 p-4 rounded-md max-h-[90dvh] overflow-scroll">
                 <div className="flex flex-col gap-2 p-4">
                     {loading ? 
                         <div className="loading loading-spinner" /> :
