@@ -4,6 +4,7 @@ import gru from "@/public/gru.png";
 import data from "@/public/data.json"
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { BsShuffle } from "react-icons/bs";
 
 export default function Home() {
     const [search, setSearch] = useState("");
@@ -40,6 +41,16 @@ export default function Home() {
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>
                 </select>
+            </fieldset> 
+            <fieldset className="fieldset">
+                <legend className="fieldset-legend">Random</legend>
+                <button className="btn" onClick={() => {
+                    const id = Math.floor(Math.random() * sorted.length);
+
+                    window.location.assign(`/test?id=${id}`);
+                }}>
+                    <BsShuffle />
+                </button>
             </fieldset>
             <fieldset className="fieldset w-full max-w-[800px]">
                 <legend className="fieldset-legend">Search prompts</legend>
