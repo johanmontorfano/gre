@@ -11,7 +11,7 @@ export default function Home() {
     const [mode, setMode] = useState<"asc" | "desc">("asc");
     const sorted = useMemo<typeof data>(
         () => data.filter(d => {
-            return d.prompt.toLowerCase().includes(search.toLowerCase())
+            return d.type === "issue" && d.prompt.toLowerCase().includes(search.toLowerCase());
         }).sort((a, b) => {
             const id1 = parseInt(a.id);
             const id2 = parseInt(b.id);
@@ -73,7 +73,6 @@ export default function Home() {
                 >
                     <p>#{entry.id}</p>
                     <p>{entry.prompt}</p>
-                    <span className="badge">{entry.type}</span>
                 </li>
             })}
         </ul>
