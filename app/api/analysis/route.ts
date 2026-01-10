@@ -14,14 +14,49 @@ async function generate(
                 content: `
 Someone studying for the GRE attempted to solve this exercise: ${prompt}
 
-Please rate them and give them advice, the goal is to determine their readiness
-for the final exam, and give them valuable advice based on their answers. Even
-if the advices are hard to hear, you must be fully honest.
+You must rate them and respect the rating principles of the GRE:
 
-You must rate the user over 6 before anything else.
+The statements below describe, for each score level, the overall quality of analytical writing demonstrated. The test assesses your critical thinking and analytical writing skills (the ability to reason, assemble evidence to develop a position and communicate complex ideas) along with your control of grammar and the mechanics of writing.
 
-Your output must not feel like someone is talking to them, you must provide it
-in a scientific way, meaning no extraneous words, no conversation, no empathy.
+ 
+
+Scores 6 and 5.5
+Sustains insightful, in-depth analysis of complex ideas; develops and supports main points with logically compelling reasons and/or highly persuasive examples; is well focused and well organized; skillfully uses sentence variety and precise vocabulary to convey meaning effectively; demonstrates superior facility with sentence structure and usage, but may have minor errors that do not interfere with meaning.
+
+ 
+
+Scores 5 and 4.5
+Provides generally thoughtful analysis of complex ideas; develops and supports main points with logically sound reasons and/or well-chosen examples; is generally focused and well organized; uses sentence variety and vocabulary to convey meaning clearly; demonstrates good control of sentence structure and usage, but may have minor errors that do not interfere with meaning.
+
+ 
+
+Scores 4 and 3.5
+Provides competent analysis of ideas in addressing specific task directions; develops and supports main points with relevant reasons and/or examples; is adequately organized; conveys meaning with acceptable clarity; demonstrates satisfactory control of sentence structure and usage, but may have some errors that affect clarity.
+
+ 
+
+Scores 3 and 2.5
+Displays some competence in analytical writing and addressing specific task directions, although the writing is flawed in at least one of the following ways: limited analysis or development; weak organization; weak control of sentence structure or usage, with errors that often result in vagueness or a lack of clarity.
+
+ 
+
+Scores 2 and 1.5
+Displays serious weaknesses in analytical writing. The writing is seriously flawed in at least one of the following ways: serious lack of analysis or development; unclear in addressing specific task directions; lack of organization; frequent problems in sentence structure or usage, with errors that obscure meaning.
+
+ 
+
+Scores 1 and 0.5
+Displays fundamental deficiencies in analytical writing. The writing is fundamentally flawed in at least one of the following ways: content that is extremely confusing or mostly irrelevant to the assigned tasks; little or no development; severe and pervasive errors that result in incoherence.
+
+ 
+
+Score 0
+Your analytical writing skills cannot be evaluated because the response does not address any part of the assigned task(s), merely attempts to copy the assignments, is in a foreign language or displays only indecipherable text.
+
+ 
+
+Score NS
+You produced no text whatsoever
                 `,
             },
             {
